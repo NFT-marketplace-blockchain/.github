@@ -1,30 +1,39 @@
-# Nexus Protocol
+# ArtChain-NFT
 
-A high-performance, decentralized NFT marketplace ecosystem incorporating Account Abstraction (ERC-4337) and a scalable event-driven architecture.
+A high-performance, decentralized NFT marketplace ecosystem built with Account Abstraction (ERC-4337) and a scalable event-driven architecture.
 
-## Ecosystem Overview
+## Architecture Overview
 
-The system is composed of four primary components working in tandem:
+The ecosystem consists of four specialized services working in unison:
 
-| Component | Repository Name | Local Path | Tech Stack | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| **Smart Contracts** | `contracts-core` | `/blockchain` | Hardhat, Solidity | Core marketplace protocol and Account Abstraction infrastructure. |
-| **API Service** | `api-service` | `/back-end` | FastAPI, Python | Off-chain indexer, REST API, and WebSocket gateway. |
-| **Web Client** | `web-client` | `/frontend-nextjs` | Next.js 15, Wagmi | Primary user interface for trading and asset management. |
-| **Admin Portal** | `admin-portal` | `/frontend-admin` | Vite, React | Dashboard for system operations and management. |
+### Core Services
 
-## Architecture
+| Service | Repository | Technologies | Description |
+| :--- | :--- | :--- | :--- |
+| **Smart Contracts** | [contracts-core](https://github.com/NFT-marketplace-blockchain/contracts-core) | Hardhat, Solidity, ERC-4337 | Core marketplace protocol, NFT standards, and Smart Account infrastructure. |
+| **API Service** | [api-service](https://github.com/NFT-marketplace-blockchain/api-service) | FastAPI, Python, Web3.py | Off-chain indexer, REST API for data query, and WebSocket gateway. |
 
-1.  **Blockchain Layer**: Smart contracts deploy on EVM-compatible networks, managing asset ownership (ERC-721) and trading logic.
-2.  **Indexing & API**: The backend service listens for blockchain events to maintain a high-speed off-chain database, serving complex queries that are expensive to run on-chain.
-3.  **Frontend Clients**:
-    *   **USER**: Connects via Web3 wallets (or email via Account Abstraction) to interact with the marketplace.
-    *   **ADMIN**: Provides oversight on campaigns, users, and system configurations.
+### User Interfaces
 
-## Development Status
+| Application | Repository | Technologies | Description |
+| :--- | :--- | :--- | :--- |
+| **Web Client** | [web-client](https://github.com/NFT-marketplace-blockchain/nft-marketplace-admin) | Next.js 15, Wagmi | Primary marketplace interface for trading, collecting, and wallet management. |
+| **Admin Portal** | [admin-portal](https://github.com/NFT-marketplace-blockchain/nft-marketplace-app) | Vite, React, Shadcn | Dashboard for platform operations, campaign management, and analytics. |
 
-*   **Logic**: Feature-complete for core trading flows.
-*   **Infrastructure**: Local development environment configured with Hardhat node.
-*   **UI/UX**: Modern implementation using Shadcn UI and specialized Web3 hooks.
+## System Workflow
+
+1.  **Blockchain Layer**: Assets and Orders are secured on-chain (Sepolia). Account Abstraction allows gasless transactions.
+2.  **Indexing Layer**: The **API Service** listens to contract events in real-time, indexing them into a query-optimized database.
+3.  **Application Layer**: 
+    *   **Web Client** queries the API for fast display and interacts directly with Contracts for execution.
+    *   **Admin Portal** manages system configurations and operational data.
+
+## Deployment
+
+The system is currently deployed on the **Sepolia Testnet**.
+
+*   **Network**: Sepolia
+*   **Indexer Status**: Active
+*   **Contracts**: Deployed & Verified
 
 ---

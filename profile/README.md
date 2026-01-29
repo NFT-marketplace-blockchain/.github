@@ -15,7 +15,7 @@ The system is composed of four primary components working in tandem:
 
 ## Architecture
 
-1.  **Blockchain Layer**: Smart contracts deploy on EVM-compatible networks, managing asset ownership (ERC-721/1155) and trading logic.
+1.  **Blockchain Layer**: Smart contracts deploy on EVM-compatible networks, managing asset ownership (ERC-721) and trading logic.
 2.  **Indexing & API**: The backend service listens for blockchain events to maintain a high-speed off-chain database, serving complex queries that are expensive to run on-chain.
 3.  **Frontend Clients**:
     *   **USER**: Connects via Web3 wallets (or email via Account Abstraction) to interact with the marketplace.
@@ -28,4 +28,3 @@ The system is composed of four primary components working in tandem:
 *   **UI/UX**: Modern implementation using Shadcn UI and specialized Web3 hooks.
 
 ---
-*Documentation for the KLTN Project.*
